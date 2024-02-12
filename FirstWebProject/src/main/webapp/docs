@@ -1,0 +1,31 @@
+Servlet(HttpsServlet)
+
+--> it is a server side technology of java
+--> Used to create dynamic web apps
+--> It is also used to processing http request
+
+
+
+
+
+
+SYNTAX
+
+@WebServlet{"/url-pattern"}  //calling name of servlet
+
+class class_name extends HttpServlet{
+		--> For get request
+		
+		void doGet(HttpServletRequest req,HttpServletResponse resp){
+			//statements
+		}
+		
+		
+		-->For post request
+		void doPost(HttpServletRequest req,HttpServletResponse resp){
+			//statements
+		}
+}
+
+
+
