@@ -33,10 +33,17 @@ public class loginServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String uname = "username";
-		String pw = "password" ; 
+		String uname = request.getParameter("username");
+		String password = request.getParameter("password"); 
 		
-		request.getRequestDispatcher("Home.jsp").forward(request,response);
+		if(uname.equals("sudershan") && password.equals("ok")) {
+			request.getRequestDispatcher("home.jsp").forward(request,response);
+
+		}
+		else {
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
+		
 	}
 
 }

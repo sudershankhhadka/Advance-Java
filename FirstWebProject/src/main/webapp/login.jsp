@@ -8,9 +8,11 @@
 </head>
 <body>
 	<a href="login.jsp">ok</a>
-	<form action = "LoginServlet" method = "post">
+	<form action = "loginServlet" method = "post">
 	Username : <input type="text" name="username"> <br>
 	Password : <input type="password" name ="password"> 
+	<hr>
+	<input type="submit" value = "login">
 	</form>
 </body>
 </html>
