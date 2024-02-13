@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.User;
+import com.service.UserService;
+import com.service.UserServiceImpl;
+
 /**
  * Servlet implementation class signup
  */
@@ -30,7 +34,23 @@ public class signupServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String fn =  request.getParameter("fname");
+		String ln = request.getParameter("lname");
+		String un = request.getParameter("username");
+		String pwd = request.getParameter("password");
 		
+		
+		//send user data in db
+		
+		User u = new User();
+		u.setFname (fn);
+		u.setLname(ln);
+		u.setUsername(un);
+		u.setPassword(pwd);
+		UserService us = new UserServiceImpl ();
+		us.userSignup(u);
+		
+		request.getRequestDispatcher("login.jsp").forward(request, response);
 	}
 
 }

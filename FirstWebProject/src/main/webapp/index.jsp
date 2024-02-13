@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>First Web Page</title>
+<title>Zion.</title>
 </head>
 <body>
 	<div>

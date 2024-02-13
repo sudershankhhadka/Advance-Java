@@ -6,6 +6,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.service.UserService;
+import com.service.UserServiceImpl;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,7 +40,9 @@ public class loginServlet extends HttpServlet {
 		String uname = request.getParameter("username");
 		String password = request.getParameter("password"); 
 		
-		if(uname.equals("sudershan") && password.equals("ok")) {
+		UserService us = new UserServiceImpl();
+		
+		if(us.userLogin(uname,password)) {
 			request.getRequestDispatcher("home.jsp").forward(request,response);
 
 		}
