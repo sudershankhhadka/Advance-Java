@@ -9,6 +9,9 @@
 <body>
 <h1>Home </h1>
 
-<h3> Welcome home</h3>
+<h3> Welcome home  ${uname }</h3>
+
+
+<a  href="UserListServlet">UserList</a>
 </body>
 </html>

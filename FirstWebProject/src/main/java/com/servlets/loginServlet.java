@@ -43,10 +43,12 @@ public class loginServlet extends HttpServlet {
 		UserService us = new UserServiceImpl();
 		
 		if(us.userLogin(uname,password)) {
+			request.setAttribute("uname",uname);
 			request.getRequestDispatcher("home.jsp").forward(request,response);
 
 		}
 		else {
+			request.setAttribute("message","User not fouund");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 		

@@ -3,6 +3,8 @@ package com.service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.db.DB;
 import com.model.User;
@@ -39,6 +41,39 @@ public class UserServiceImpl implements UserService {
 		}
 		
 		return false;
+	}
+
+	public List<User> getAllUsers() {
+		List<User> ulist = new ArrayList<>();
+		String sql = "select * from user";
+		
+		Statement stm;
+		try {
+			stm = DB.getConnection().createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+		
+
+		
+	
+			while(rs.next()) {
+				
+				//row mapping to object
+				
+				User user = new User();
+				
+				user.setId(rs.getInt("id"));
+				user.setFname(rs.getString("fname"));
+				user.setLname(rs.getString("lname"));
+				user.setUsername(rs.getString("username"));
+				user.setPassword(rs.getString("password"));
+				
+				ulist.add(user);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ulist;
 	}
 		
 }

@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="login.jsp">ok</a>
+	<a href="index.jsp">ok</a>
 	<form action = "loginServlet" method = "post">
 	Username : <input type="text" name="username"> <br>
 	Password : <input type="password" name ="password"> 
