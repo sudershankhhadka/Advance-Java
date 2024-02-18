@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
 	public boolean userLogin(String un, String pw) {
 		// TODO Auto-generated method stub
 		
-		String sql = "select * from user where username='"+un+"','"+pw+"'";
+		String sql = "select * from user where username='"+un+"' and '"+pw+"'";
 		try {
 			Statement st = DB.getConnection().createStatement();
 			ResultSet rs = st.executeQuery(sql);
